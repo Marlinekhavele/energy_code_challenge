@@ -1,39 +1,57 @@
-### Marline Khavele
+### Energy Backend
+- This project is designed to manage D0010 files that have meter reading data.The project contains a model that has meters and readings.It also includes a management command and an admin interface for managing data
 
-# Octopus Energy Challenge
+Built with:
+```shell
+Python version 3
+Django
+```
+#### Setting up the project
 
-###### This project is designed to manage D0010 files that have meter reading data.The project contains a model that has meters and readings It also includes a management command plus an admin interface for managing data
+- Clone the project using git clone from Github: ```https://github.com/Marlinekhavele/energy_code_challenge```
+- Enter the project directory i.e ```cd app```
+- create virtual environment
+```shell
+virtualenv env -p python3.11 - use your local python
+```
+*Activate the virtual env with the below command
+```shell
+source env/bin/activate
+```
 
-
-##### How to run the project 
-- This project is not on github, just a zipped folder how to install it is quite easy just unzip the project and rub the below comand 
-'''
+##### Install deps:
+```shell
 pip install -r requirements.txt
-'''
+```
+##### To check django admin you need to create a user using the below command
+- `python manage.py createsuperuser` 
+```shell
+- username: octopusenergy
+- password: 12345
 
-- Set up database migration 
-'''
-python manage.py migrate 
-'''
-
-- To ensure the project is running locally use this command
-'''
+```
+##### Ensure Database is on the same level
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+##### Run the project Locally with the below command 
+```shell
 python manage.py runserver
-'''
+```
 
-- Login to the django admin 
-
-'''
-username: octopusenergy
-password: 12345
-'''
-
-- To run test
-'''
+##### Running Tests Locally
+```shell
 python manage.py test
 
-'''
-
+```
+some environment variables you will use inside your `.env`file just copy this.
+```shell
+DB_USER=postgres
+DB_HOST=localhost
+DB_NAME=octopus_energy_app
+DB_PASSWORD=password
+```
 ##### what to  improve on  this project
 
 - REST API: Implement a RESTful API to allow users to upload D0010 files via the web interface.
