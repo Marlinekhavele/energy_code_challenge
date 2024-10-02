@@ -9,8 +9,8 @@ Django
 2. ### Setting Up PostgreSQL Database
 
 1. #### Install PostgreSQL:
-   ```shell
-   # Ubuntu
+```shell
+  # Ubuntu
    - sudo apt-get update
    - sudo apt-get install postgresql postgresql-contrib
    # macOS
@@ -33,8 +33,8 @@ Django
 
   # Exit the PostgreSQL shell
    - \q
-```
 
+```
 3. #### Setting up the project
 
 - Clone the project using git clone from Github: ```https://github.com/Marlinekhavele/energy_code_challenge```
