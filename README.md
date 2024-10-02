@@ -33,6 +33,7 @@ Django
 
   # Exit the PostgreSQL shell
    - \q
+```
 
 3. #### Setting up the project
 
