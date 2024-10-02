@@ -18,4 +18,3 @@ D0036	Validated Half Hourly Advances for Inclusion in Aggregated Supplier Matrix
 D0039	Daily Profile Coefficient File	BSC	12/03/2024	12/03/2024
 D0040	Aggregated Half Hour Data File	BSC	12/03/2024	12/03/2024
 D0041	Supplier Purchase Matrix Data File	BSC	12/03/2024	12/03/2024
-        
