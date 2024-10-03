@@ -3,12 +3,10 @@
 
 1. ### Built with:
 ```shell
-Python3.11
-Django
+- Python3.11
+- Django
 ```
-2. ### Setting Up PostgreSQL Database
-
-1. #### Install PostgreSQL:
+2. ### Setting Up PostgreSQL Database:
 ```shell
   # Ubuntu
    - sudo apt-get update
@@ -20,7 +18,8 @@ Django
   - sudo -i -u postgres
 
   # Open PostgreSQL shell
-  -  psql
+  -  brew services start postgres
+  -  psql postgres
 
   # Create a new user 
   - CREATE USER postgres WITH PASSWORD 'password';
@@ -33,10 +32,8 @@ Django
 
   # Exit the PostgreSQL shell
    - \q
-
 ```
 3. #### Setting up the project
-
 - Clone the project using git clone from Github: ```https://github.com/Marlinekhavele/energy_code_challenge```
 - Enter the project directory i.e ```cd app```
 - create virtual environment
@@ -47,32 +44,44 @@ virtualenv env -p python3.11
 ```shell
 source env/bin/activate
 ```
-
-##### Install deps:
+4. ##### Install deps:
 ```shell
 pip install -r requirements.txt
 ```
-##### To check django admin you need to create a user using the below command
+
+5. ##### Ensure Database is on the same level
+```shell
+python manage.py makemigrations
+python manage.py migrate
+```
+6. ##### To check django admin you need to create a user using the below command
 - `python manage.py createsuperuser` 
 ```shell
 - username: octopusenergy
 - password: 12345
 ```
-##### Ensure Database is on the same level
-```shell
-python manage.py makemigrations
-python manage.py migrate
-```
-##### Run the project Locally with the below command 
+
+7. ##### Run the project Locally with the below command 
 ```shell
 python manage.py runserver
 ```
+
+#### check the Admin side to see if all models are there
+```shell
+http://127.0.0.1:3000/admin/app/meter/
+```
+
+#### Running the import files 
+```shell
+python manage.py import_d0010 correct-sample.txt
+```
+
 ##### Running Tests Locally
 ```shell
 python manage.py test
 
 ```
-some environment variables you will use inside your `.env`file just copy this.
+#### some environment variables you will use inside your `.env`file just copy this.
 ```shell
 DB_USER=postgres
 DB_HOST=localhost
@@ -90,6 +99,3 @@ DB_PASSWORD=password
 2. Logging: Implement detailed logging for better tracking of import processes.
 3. Performance: For large files, consider using bulk_create() to improve import speed.
 4. Configuration: Make the file structure and field mappings configurable for flexibility.
-
-
-
